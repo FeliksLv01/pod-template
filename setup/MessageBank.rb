@@ -35,7 +35,6 @@ module Pod
       end
 
       puts "\n------------------------------"
-      puts ""
 
       has_run_before = `defaults read org.cocoapods.pod-template HasRunBefore`.chomp == "1"
 
@@ -45,6 +44,12 @@ module Pod
       end
 
       puts ""
+    end
+
+    def start_setup_message
+      puts ""
+      pod_name = @configurator.pod_name
+      puts "Start generate iOS Swift Pod #{pod_name}".green
     end
 
     def farewell_message

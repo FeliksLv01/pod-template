@@ -70,7 +70,7 @@ module Pod
     def run
       @message_bank.welcome_message
       ConfigureSwift.perform(configurator: self)
-      puts "Start generate iOS Swift Pod #{pod_name}".green
+      @message_bank.start_setup_message
       replace_variables_in_files
       clean_template_files
       rename_template_files
