@@ -69,8 +69,8 @@ module Pod
 
     def run
       @message_bank.welcome_message
-      puts "Start generate iOS Swift Pod #{pod_name}".green
       ConfigureSwift.perform(configurator: self)
+      puts "Start generate iOS Swift Pod #{pod_name}".green
       replace_variables_in_files
       clean_template_files
       rename_template_files
@@ -148,9 +148,9 @@ module Pod
       File.open(prefix_path, "w") { |file| file.puts pch }
     end
 
-    def set_test_framework(test_type, extension, folder)
-      content_path = "setup/test_examples/" + test_type + "." + extension
-      tests_path = "templates/" + folder + "/Example/Tests/Tests." + extension
+    def config_test_framework
+      content_path = "setup/test_examples/xctest.swift"
+      tests_path = "templates/Example/Tests/Tests.swift"
       tests = File.read tests_path
       tests.gsub!("${TEST_EXAMPLE}", File.read(content_path) )
       File.open(tests_path, "w") { |file| file.puts tests }
