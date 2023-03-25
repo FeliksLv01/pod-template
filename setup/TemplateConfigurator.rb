@@ -76,9 +76,9 @@ module Pod
       rename_template_files
       add_pods_to_podfile
       customise_prefix
-      reinitialize_git_repo
       run_pod_install
       remove_unuse_files
+      reinitialize_git_repo
       @message_bank.farewell_message
     end
 
@@ -95,9 +95,6 @@ module Pod
       Dir.chdir("Example") do
         system "pod install"
       end
-
-      `git add Example/#{pod_name}.xcodeproj/project.pbxproj`
-      `git commit -m "Initial commit"`
     end
 
     def clean_template_files
