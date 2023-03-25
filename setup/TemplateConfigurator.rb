@@ -76,18 +76,16 @@ module Pod
       rename_template_files
       add_pods_to_podfile
       customise_prefix
-      rename_classes_folder
-      ensure_carthage_compatibility
       reinitialize_git_repo
       run_pod_install
-
+      remove_unuse_files
       @message_bank.farewell_message
     end
 
     #----------------------------------------#
 
-    def ensure_carthage_compatibility
-      FileUtils.ln_s('Example/Pods/Pods.xcodeproj', '_Pods.xcodeproj')
+    def remove_unuse_files
+      `rm _Pods.xcodeproj`
     end
 
     def run_pod_install
@@ -160,10 +158,6 @@ module Pod
       FileUtils.mv "POD_README.md", "README.md"
       FileUtils.mv "POD_LICENSE", "LICENSE"
       FileUtils.mv "NAME.podspec", "#{pod_name}.podspec"
-    end
-
-    def rename_classes_folder
-      FileUtils.mv "Pod", @pod_name
     end
 
     def reinitialize_git_repo

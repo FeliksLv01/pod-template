@@ -49,13 +49,11 @@ module Pod
     def start_setup_message
       puts ""
       pod_name = @configurator.pod_name
-      puts "Start generate iOS Swift Pod #{pod_name}".green
+      puts "\nStart generate iOS Swift Pod #{pod_name}".green
     end
 
     def farewell_message
       puts ""
-
-      puts " Ace! you're ready to go!"
       puts " We will start you off by opening your project in Xcode"
       pod_name = @configurator.pod_name
       run_command "open 'Example/#{pod_name}.xcworkspace'", "open '#{pod_name}/Example/#{pod_name}.xcworkspace'"

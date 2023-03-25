@@ -13,11 +13,10 @@ Pod::Spec.new do |s|
   s.prefix_header_file = false
   s.source_files = 'Sources/**/*.{swift,h,m,mm}'
 
-    # s.resource_bundles = {
-  #   '${POD_NAME}' => ['${POD_NAME}/Assets/*.png']
+  # s.resource_bundles = {
+  #   '${POD_NAME}' => ['Resources/Images.xcassets']
   # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit'
   # s.dependency 'SnapKit'
 end
