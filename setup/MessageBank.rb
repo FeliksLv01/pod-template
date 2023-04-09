@@ -41,13 +41,11 @@ module Pod
       unless has_run_before
         puts "\n Press return to continue."
         `defaults write org.cocoapods.pod-template HasRunBefore -bool true`
+        puts ""
       end
-
-      puts ""
     end
 
     def start_setup_message
-      puts ""
       pod_name = @configurator.pod_name
       puts "\nStart generate iOS Swift Pod #{pod_name}".green
     end
