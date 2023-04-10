@@ -18,7 +18,7 @@ module Pod
         :configurator => @configurator,
         :xcodeproj_path => "templates/Example/PROJECT.xcodeproj",
         :platform => :ios,
-        :remove_demo_project => :no,
+        :remove_demo_project => false,
         :prefix => ""
       }).run
 
