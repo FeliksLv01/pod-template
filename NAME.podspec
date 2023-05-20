@@ -11,7 +11,10 @@ Pod::Spec.new do |s|
   s.swift_version = '5.0'
   
   s.prefix_header_file = false
-  s.source_files = 'Sources/**/*.{swift,h,m,mm}'
+  s.source_files = [
+    '${POD_NAME}.swift',
+    'Sources/**/*.{swift,h,m,mm}'
+  ]
 
   # s.resource_bundles = {
   #   '${POD_NAME}' => ['Resources/Images.xcassets']
